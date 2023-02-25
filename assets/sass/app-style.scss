@@ -1,0 +1,43 @@
+@mixin fontStyle($fontSize, $weight, $color) {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $fontSize;
+  line-height: 16px;
+  color: $color;
+}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+p {
+  margin-bottom: 0;
+}
+ul {
+  margin-bottom: 0 !important;
+  padding-left: 0;
+  list-style: none;
+}
+.bg-color {
+  background: #f5f5f5;
+}
+body {
+  &::-webkit-scrollbar {
+    width: 12px;
+    background: transparent;
+  }
+
+  /* Track */
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #008aff;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+}
+.v-toast {
+  z-index: 2030 !important;
+}

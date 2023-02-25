@@ -1,0 +1,137 @@
+.form-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  .el-form-item.is-error {
+    .el-input__inner {
+      border-color: #d2dbec !important;
+    }
+  }
+  .el-form-item {
+    margin-bottom: 0 !important;
+  }
+  // .el-form-item__content {
+  //   position: relative;
+  //   .el-form-item__error {
+  //     position: absolute;
+  //     pointer-events: none;
+  //     right: 20px;
+  //     display: flex;
+  //     justify-content: flex-end;
+  //     top: 30%;
+  //   }
+  // }
+  .ant-calendar-picker-input {
+    height: 100%;
+  }
+  .el-input__inner {
+    height: 100% !important;
+  }
+  .phone-number {
+    position: relative;
+    display: flex;
+    align-items: center;
+    input {
+      width: 100%;
+    }
+    img {
+      position: absolute;
+      right: 16px;
+      cursor: pointer;
+    }
+  }
+
+  label {
+    @include fontStyle(18px, 600, $dark-blue);
+    margin-bottom: 16px;
+  }
+  .checkbox-input {
+    .ant-radio-wrapper {
+      margin-bottom: 0 !important;
+      @include fontStyle(16px, 400, $dark-blue);
+      line-height: 150%;
+    }
+    .ant-radio-inner {
+      width: 24px;
+      height: 24px;
+      background-color: #f4f8ff;
+      border-color: #008aff;
+      &::after {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  input,
+  .checkbox-input,
+  textarea {
+    background: #f4f8ff;
+    border: 1px solid #d2dbec;
+    border-radius: 12px;
+    padding: 17px 24px;
+    @include fontStyle(16px, 400, $dark-blue);
+    &::placeholder {
+      color: #96adc1;
+      @include fontStyle(16px, 400, $dark-blue);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .add-number-btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 17px 24px;
+    border: 1px dashed #b5bed1;
+    border-radius: 12px;
+    @include fontStyle(16px, 600, $dark-blue);
+    line-height: 120%;
+    cursor: pointer;
+  }
+}
+.email_incorrect {
+  color: red;
+  position: absolute;
+  right: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 0;
+  pointer-events: none;
+}
+.form-btn {
+  background: linear-gradient(90deg, #008aff 0%, #005ba8 100%);
+  // background: green;
+  @include fontStyle(16px, 600, #fff);
+  line-height: 20px;
+  padding: 10px 29px;
+  border-radius: 500px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 1s !important;
+  &:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #005ba8 0%, #008aff 100%);
+  }
+  svg {
+    margin-left: 18px;
+  }
+}
+.el-select-dropdown {
+  .el-select-dropdown__item {
+    &:hover {
+      background: #e5ebf5 !important;
+    }
+  }
+}
+.el-select-dropdown__item {
+  span {
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 350px;
+  }
+}

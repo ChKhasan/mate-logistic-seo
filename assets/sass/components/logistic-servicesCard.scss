@@ -1,0 +1,72 @@
+.log-services-card {
+  padding: 23px 28px;
+  background: #2c7bf2;
+  border-radius: 16.3793px;
+}
+.logs-card-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 39.8px;
+  cursor: pointer;
+  h3 {
+    @include fontStyle(24.1622px, 700, #ffffff);
+    line-height: 30px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+  }
+  p {
+    @include fontStyle(16.1082px, 400, #ffffff);
+    line-height: 19px;
+    height: calc(3 * 19px);
+    margin-bottom: 0;
+    margin-top: 9.3px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+  }
+}
+.logs-card-img {
+  height: 120px;
+  cursor: pointer;
+  overflow: hidden;
+  img {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .log-services-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .logs-card-img {
+    height: 70px;
+  }
+  .logs-card-body {
+    margin-top: 18px;
+    h3 {
+      @include fontStyle(16px, 700, #ffffff);
+      line-height: 20px;
+      margin-bottom: 0;
+    }
+    p {
+      @include fontStyle(12px, 400, #ffffff);
+      line-height: 14px;
+      margin-bottom: 0;
+      margin-top: 8px;
+    }
+  }
+}

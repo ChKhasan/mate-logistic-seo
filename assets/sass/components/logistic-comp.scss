@@ -1,0 +1,136 @@
+.logistic-card {
+  padding: 31px 55px;
+  background: #ffffff;
+  //   opacity: 0.99;
+  border: 1px solid #ecf3ff;
+  border-radius: 126px;
+  z-index: 30;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    @include fontStyle(25.3564px, 700, $dark-blue);
+    line-height: 30px;
+  }
+  p {
+    @include fontStyle(16px, 400, #96adc1);
+    line-height: 24px;
+  }
+}
+.logistic-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 30;
+  svg {
+    position: absolute;
+    left: -46px;
+    z-index: 0;
+  }
+}
+.logistic-comp {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+.logistic-comp-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: calc(56px + 30px);
+  margin-left: 46px;
+}
+
+@media (max-width: 1000px) {
+  .logistic-card {
+    padding: 24px 32px;
+    h3 {
+      @include fontStyle(20px, 700, $dark-blue);
+      line-height: 30px;
+      margin-bottom: 0;
+    }
+    p {
+      @include fontStyle(14px, 400, #96adc1);
+      line-height: 24px;
+    }
+  }
+  .logistic-block {
+    svg {
+      width: 140px;
+      height: 150px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .logistic-card {
+    padding: 31px 55px;
+    background: #ffffff;
+    //   opacity: 0.99;
+    border: 1px solid #ecf3ff;
+    border-radius: 126px;
+    z-index: 30;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+      @include fontStyle(25.3564px, 700, $dark-blue);
+      line-height: 30px;
+    }
+    p {
+      @include fontStyle(16px, 400, #96adc1);
+      line-height: 24px;
+    }
+    
+  }
+  .logistic-block {
+    margin-bottom: 100px;
+    &:last-child {
+    margin-bottom: 0;
+
+    }
+    svg {
+      height: 197px;
+      width: 143px;
+      left: -46px;
+    }
+  }
+  .logistic-comp-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .logistic-comp {
+    padding-top: 56px;
+  }
+}
+@media (max-width: 576px) {
+  .logistic-comp-grid {
+    margin-top: 61px;
+  }
+  .logistic-card {
+    padding: 30px 33px;
+
+    h3 {
+      @include fontStyle(18px, 700, $dark-blue);
+      line-height: 24px;
+      letter-spacing: -0.035em;
+    }
+    p {
+      @include fontStyle(16px, 400, #96adc1);
+      line-height: 24px;
+      margin-bottom: 0;
+      letter-spacing: -0.04em;
+    }
+  }
+  .logistic-block svg {
+    height: 164px;
+    width: 118px;
+  }
+  .logistic-comp {
+    padding-top: 40px;
+  }
+}

@@ -1,0 +1,75 @@
+.tarif_card {
+  border-radius: 14px;
+  padding: 17px;
+  background: rgba(217, 217, 217, 0.2);
+  cursor: pointer;
+  transition: all .4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarif_card__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  .tarif_checkbox {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    border: 3px solid #0079df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 44px;
+    background: linear-gradient(90deg, #008aff 0%, #005ba8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 0;
+  }
+  span {
+    color: #0070ce;
+  }
+}
+.tarif_body {
+  p {
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 8px;
+    color: #0070ce;
+  }
+ 
+}
+.superTarif {
+  background: linear-gradient(90deg, #008aff 0%, #005ba8 100%);
+  transform: scale(1.05);
+
+  .tarif_card__title {
+    .tarif_checkbox {
+      border: 3px solid #fff;
+      background: #005ba8;
+    }
+    h1,
+    span {
+      color: #ffffff !important;
+      -webkit-text-fill-color: unset;
+    }
+  }
+  .tarif_body {
+    p {
+      color: #ffffff;
+    }
+  }
+
+}

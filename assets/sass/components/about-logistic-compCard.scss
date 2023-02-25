@@ -1,0 +1,110 @@
+.about-logistic-card {
+  background: #ffffff;
+  border: 1px solid #ecf3ff;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  z-index: 10;
+}
+.al-card-title-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  min-height: 108px;
+  .al-card-icon {
+    background: #e8f0ff;
+    border-radius: 18.5477px;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .al-card-title {
+    display: flex;
+    align-items: center;
+    h2 {
+      @include fontStyle(24px, 700, $dark-blue);
+      line-height: 32px;
+      letter-spacing: -0.03em;
+    }
+  }
+}
+.al-card-text {
+  margin-top: 24px;
+  p {
+    @include fontStyle(16.2281px, 400, #96adc1);
+    line-height: 25px;
+    letter-spacing: -0.035em;
+    margin-bottom: 0;
+  }
+}
+.about-logistic-comp {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+.about-logistic-comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+@media (max-width: 1000px) {
+  .al-card-title-grid {
+    grid-gap: 14px;
+    .al-card-icon {
+      border-radius: 6px;
+      height: 56px;
+      width: 56px;
+      svg {
+        width: 26px;
+        height: 31px;
+      }
+    }
+    .al-card-title {
+      display: flex;
+      align-items: center;
+      h2 {
+        @include fontStyle(18px, 700, $dark-blue);
+        line-height: 24px;
+        letter-spacing: -0.03em;
+      }
+    }
+  }
+  .al-card-text {
+    margin-top: 12px;
+    p {
+      @include fontStyle(14px, 400, #96adc1);
+      line-height: 24px;
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
+    }
+  }
+  .about-logistic-comp-grid {
+    grid-gap: 12px;
+  }
+}
+@media (max-width: 850px) {
+  .about-logistic-comp-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-logistic-comp {
+    padding-top: 30px;
+    padding-bottom: 56px;
+  }
+}
+@media (max-width: 576px) {
+  .about-logistic-comp {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .about-logistic-card {
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .al-card-title-grid {
+    display: flex;
+    .al-card-icon {
+      margin-right: 14px;
+    }
+  }
+}

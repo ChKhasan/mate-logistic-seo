@@ -1,0 +1,14 @@
+.carousel_grid {
+  .swiper-button-prev {
+    right: 0 !important;
+    top: -50px;
+  }
+}
+.logistic-services {
+  padding-top: calc(60px + 29px);
+}
+@media (max-width: 576px) {
+  .logistic-services {
+    padding-top: 45px;
+  }
+}

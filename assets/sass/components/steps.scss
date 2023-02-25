@@ -1,0 +1,103 @@
+.el-step__line-inner {
+  border-style: dashed !important;
+}
+.el-step__line {
+  border-bottom: 2.07381px dashed #d8dfec !important;
+  background: transparent !important;
+}
+.el-step__head.is-success {
+  border-color: #008aff !important;
+  color: #fff !important;
+  //   background-color: #008aff;
+}
+.is-success {
+  .el-step__icon {
+    background: #008aff !important;
+  }
+}
+.el-step__title.is-success {
+  color: #008aff !important;
+}
+.el-step.is-horizontal .el-step__line {
+  height: 2px;
+  top: 25px !important;
+  left: 44px !important;
+  right: 30px !important;
+}
+.el-step__icon,
+.ant-steps-item-icon {
+  width: 21px !important;
+  height: 21px !important;
+  display: flex;
+  align-items: center;
+}
+.el-step__head.is-process,
+.el-step__head.is-wait {
+  .el-step__icon {
+    background-color: #c5cad5 !important;
+  }
+  color: #fff !important;
+  border-color: #c5cad5 !important;
+}
+.el-step__title.is-process {
+  color: #c5cad5 !important;
+  font-weight: 400 !important;
+}
+.ant-steps-item-icon {
+  font-size: 16px !important;
+}
+.ant-steps-item-icon > .ant-steps-icon {
+  top: -8px !important;
+}
+.ant-steps-icon {
+  svg {
+    width: 8px;
+  }
+}
+.ant-steps-item-wait .ant-steps-item-icon {
+  background-color: #c5cad5 !important;
+  border-color: #c5cad5 !important;
+  .ant-steps-icon {
+    color: #fff !important;
+  }
+}
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: #008aff !important;
+}
+.ant-steps-icon {
+  color: #fff !important;
+}
+.ant-steps-finish-icon {
+  font-weight: 700 !important;
+  svg {
+    width: 12px !important;
+  }
+}
+.ant-steps-item-title {
+  @include fontStyle(16px, 600, #c5cad5);
+  color: #c5cad5 !important;
+  font-size: 16px;
+  line-height: 20px;
+  &::after {
+    top: 6px !important;
+  }
+}
+.ant-steps-item-container {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.ant-steps-item-active,.ant-steps-item-finish {
+  .ant-steps-item-title {
+    color: #008aff !important;
+    &::after {
+      border-bottom: 2.07381px dashed #008aff !important;
+    }
+  }
+}
+.ant-steps-item-wait {
+  .ant-steps-item-title {
+    &::after {
+      border-bottom: 2.07381px dashed #d8dfec !important;
+    }
+  }
+}
