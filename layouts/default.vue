@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="wrapper">
     <div class="header-back"></div>
+    <client-only>
     <el-drawer
       title="I am the title"
       :visible.sync="drawer"
@@ -181,7 +182,7 @@
         </div>
       </div>
     </el-drawer>
-
+  </client-only>
     <Header :drawerOpen="drawerOpen" />
     <main style="flex: 1 1 auto;">
       <Nuxt />

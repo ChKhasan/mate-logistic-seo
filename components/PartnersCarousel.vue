@@ -7,10 +7,10 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="review in reviews">
-          <PartnersCard :review="review"/>
+          <PartnersCard :review="review" />
         </div>
         <div class="swiper-slide" v-for="review in reviews">
-          <PartnersCard :review="review"/>
+          <PartnersCard :review="review" />
         </div>
       </div>
     </div>

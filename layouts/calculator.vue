@@ -538,6 +538,7 @@
                       v-if="!skeleton"
                       :value="radio.code"
                       v-for="(radio, index) in vehicleCondition"
+                      :key="index"
                     >
                       <p>{{ radio.name }}</p>
                     </a-radio>
@@ -714,69 +715,70 @@
       </div>
     </div>
     <Footer />
-    <modal name="modal_discount" width="590px" height="auto">
-      <div class="modal_container">
-        <div class="modal_header d-flex justify-content-between">
-          <h5>{{ $store.state.translations["modal.discount_title"] }}</h5>
-          <span @click="hide('modal_discount')"
-            ><svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.66699 6.646L17.333 17.31M6.66699 17.31L17.333 6.646"
-                stroke="#024E90"
-                stroke-width="1.5"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              /></svg
-          ></span>
-        </div>
-        <div
-          class="modal_body modal-discount d-flex flex-column align-items-center"
-        >
-          <div class="d-flex flex-column align-items-center mt-lg-2 mb-4">
-            <h6 class="discount-title">
-              {{ $store.state.translations["modal.discount_title"] }}
-            </h6>
-            <p class="discount-text text-center">
-              {{ $store.state.translations["modal.discount_text"] }}
-            </p>
+    <client-only>
+      <modal name="modal_discount" width="590px" height="auto">
+        <div class="modal_container">
+          <div class="modal_header d-flex justify-content-between">
+            <h5>{{ $store.state.translations["modal.discount_title"] }}</h5>
+            <span @click="hide('modal_discount')"
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.66699 6.646L17.333 17.31M6.66699 17.31L17.333 6.646"
+                  stroke="#024E90"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
           </div>
-          <div class="form-block w-100">
-            <input type="text" placeholder="+998 (__) ___ __ __" />
-            <span class="discount-timer"
-              >0:{{
-                discountTimer.toString().length < 2
-                  ? `0${discountTimer}`
-                  : discountTimer
-              }}
-              sekund</span
-            >
-          </div>
+          <div
+            class="modal_body modal-discount d-flex flex-column align-items-center"
+          >
+            <div class="d-flex flex-column align-items-center mt-lg-2 mb-4">
+              <h6 class="discount-title">
+                {{ $store.state.translations["modal.discount_title"] }}
+              </h6>
+              <p class="discount-text text-center">
+                {{ $store.state.translations["modal.discount_text"] }}
+              </p>
+            </div>
+            <div class="form-block w-100">
+              <input type="text" placeholder="+998 (__) ___ __ __" />
+              <span class="discount-timer"
+                >0:{{
+                  discountTimer.toString().length < 2
+                    ? `0${discountTimer}`
+                    : discountTimer
+                }}
+                sekund</span
+              >
+            </div>
 
-          <div class="modal-discount-btn w-100">
-            <div
-              class="form-discount-btn form-btn"
-              @click="hide('modal_discount')"
-            >
-              {{ $store.state.translations["modal.discount_btn_no"] }}
-            </div>
-            <div class="form-btn">
-              {{ $store.state.translations["modal.discount_btn_yes"] }}
+            <div class="modal-discount-btn w-100">
+              <div
+                class="form-discount-btn form-btn"
+                @click="hide('modal_discount')"
+              >
+                {{ $store.state.translations["modal.discount_btn_no"] }}
+              </div>
+              <div class="form-btn">
+                {{ $store.state.translations["modal.discount_btn_yes"] }}
+              </div>
             </div>
           </div>
-        </div>
-      </div></modal
-    >
+        </div></modal
+      >
+    </client-only>
   </div>
 </template>
 <script>
-import CalculatorInfoItems from "../components/calculator/calculatorInfoItems.vue";
 import Header from "../components/layout/Header.vue";
 import Footer from "../components/layout/Footer.vue";
 import yearsData from "../helpers/yearsData";
@@ -956,12 +958,14 @@ export default {
     },
   },
   mounted() {
-    if (!JSON.parse(localStorage.getItem("discount"))) {
-      this.show("modal_discount");
-      if (this.discountTimer == 60) {
-        this.timer();
+    if (process.browser) {
+      if (!JSON.parse(localStorage.getItem("discount"))) {
+        this.show("modal_discount");
+        if (this.discountTimer == 60) {
+          this.timer();
+        }
+        localStorage.setItem("discount", JSON.stringify(true));
       }
-      localStorage.setItem("discount", JSON.stringify(true));
     }
     this.__GET_LEADS();
     this.__GET_CITIES();
@@ -976,7 +980,6 @@ export default {
     }
   },
   components: {
-    CalculatorInfoItems,
     Header,
     Footer,
   },

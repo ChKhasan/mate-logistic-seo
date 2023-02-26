@@ -46,9 +46,23 @@ export default {
     this.__GET_SERVICES();
     this.__GET_STATES();
     this.__GET_REVIEWS();
+    setTimeout(() => {
+      this.scrollElement();
+    }, 0);
   },
-
+  beforeMount() {},
   methods: {
+    async scrollElement() {
+      if (localStorage.getItem("scrollId") && process.client) {
+        setTimeout(() => {
+          const element = document.getElementById(
+            JSON.parse(localStorage.getItem("scrollId"))
+          );
+          element.scrollIntoView();
+          localStorage.removeItem("scrollId");
+        }, 0);
+      }
+    },
     async __GET_SERVICES() {
       this.$nextTick(() => {
         this.$nuxt.$loading.start();

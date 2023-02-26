@@ -232,10 +232,13 @@ export default {
   },
   methods: {
     toNextStep() {
-      localStorage.setItem(
-        "app_create",
-        JSON.stringify({ tarif: this.$store.state.tarifType })
-      );
+      if(process.browser) {
+
+        localStorage.setItem(
+          "app_create",
+          JSON.stringify({ tarif: this.$store.state.tarifType })
+        );
+      }
       this.$router.push(
         `/calculator/delivery-details/${this.$route.params.index}`
       );

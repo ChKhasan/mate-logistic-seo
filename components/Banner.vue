@@ -7,6 +7,7 @@
       />
     </div>
     <div class="banner-grid">
+    <client-only>
       <div class="banner-video" data-aos="fade-right" data-aos-duration="1000">
         <div class="banner-title">
           <!-- <h1>{{ $store.state.staticInfo.title }}</h1>
@@ -433,6 +434,7 @@
           </p>
         </el-form>
       </div>
+    </client-only>
     </div>
   </div>
 </template>
@@ -615,10 +617,20 @@ export default {
         currentLang: this.$i18n.locale,
         data: this.ruleForm,
       });
-      this.$nuxt.$loading.finish();
-      if (this.leadCread.uuid) {
+
+      if (this.leadCread.uuid && process.browser) {
         localStorage.setItem("editData", JSON.stringify(this.ruleForm));
         this.$router.push(`/calculator/choice-tarif/${this.leadCread.uuid}`);
+      } else {
+        this.$nuxt.$loading.finish();
+        console.log(this.leadCread);
+        this.$toast.open({
+          message: `${this.leadCread}`,
+          type: "error",
+          duration: 2000,
+          dismissible: true,
+          position: "top-right",
+        });
       }
     },
     async submitForm(ruleForm, val) {

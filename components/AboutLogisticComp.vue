@@ -6,27 +6,29 @@
         :text="$store.state.translations['main.mate_logistics_company-text']"
       />
       <div class="about-logistic-comp-grid about-shadow">
-        <AboutLogisticCard
-          data-aos="fade-up"
-          data-aos-duration="800"
-          :data-aos-delay="200"
-          :title="$store.state.translations['main.info1_cardTitle']"
-          :text="$store.state.translations['main.info1_cardText']"
-        />
-        <AboutLogisticCard
-          data-aos="fade-up"
-          data-aos-duration="800"
-          :data-aos-delay="400"
-          :title="$store.state.translations['main.info2_cardTitle']"
-          :text="$store.state.translations['main.info2_cardText']"
-        />
-        <AboutLogisticCard
-          data-aos="fade-up"
-          data-aos-duration="800"
-          :data-aos-delay="600"
-          :title="$store.state.translations['main.info3_cardTitle']"
-          :text="$store.state.translations['main.info3_cardText']"
-        />
+        <client-only>
+          <AboutLogisticCard
+            data-aos="fade-up"
+            data-aos-duration="800"
+            :data-aos-delay="200"
+            :title="$store.state.translations['main.info1_cardTitle']"
+            :text="$store.state.translations['main.info1_cardText']"
+          />
+          <AboutLogisticCard
+            data-aos="fade-up"
+            data-aos-duration="800"
+            :data-aos-delay="400"
+            :title="$store.state.translations['main.info2_cardTitle']"
+            :text="$store.state.translations['main.info2_cardText']"
+          />
+          <AboutLogisticCard
+            data-aos="fade-up"
+            data-aos-duration="800"
+            :data-aos-delay="600"
+            :title="$store.state.translations['main.info3_cardTitle']"
+            :text="$store.state.translations['main.info3_cardText']"
+          />
+        </client-only>
       </div>
     </div>
   </div>

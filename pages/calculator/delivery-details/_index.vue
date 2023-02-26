@@ -211,13 +211,16 @@ export default {
       console.log("radio checked", e.target.value);
     },
     toNextStep() {
-      const firstStep = JSON.parse(localStorage.getItem("app_create"));
-      this.ruleForm = {
-        ...this.ruleForm,
-        lead: this.leads.id,
-        tarif: firstStep.tarif,
-      };
-      localStorage.setItem("app_create", JSON.stringify(this.ruleForm));
+      if(process.browser) {
+
+        const firstStep = JSON.parse(localStorage.getItem("app_create"));
+        this.ruleForm = {
+          ...this.ruleForm,
+          lead: this.leads.id,
+          tarif: firstStep.tarif,
+        };
+        localStorage.setItem("app_create", JSON.stringify(this.ruleForm));
+      }
       this.$router.push(`/calculator/transport/${this.$route.params.index}`);
     },
     async __GET_LEADS() {

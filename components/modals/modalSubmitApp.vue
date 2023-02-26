@@ -1,4 +1,6 @@
 <template lang="html">
+      <client-only>
+
   <modal :adaptive="true" name="modal_leave_weak" width="996px" height="auto">
     <div class="modal_container window-header">
       <div class="modal_header d-flex justify-content-between">
@@ -262,6 +264,8 @@
       </div>
     </div>
   </modal>
+</client-only>
+
 </template>
 <script>
 import moment from "moment";

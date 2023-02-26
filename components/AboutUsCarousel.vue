@@ -46,7 +46,7 @@
         <a class="contact-btn" :href="`tel:${$store.state.staticInfo.nbm}`">
           {{ $store.state.translations[`main.howWeWork_call`] }}
         </a>
-        <div class="form-btn" v-if="img != 4">
+        <div class="form-btn" >
           {{ $store.state.translations["main.form_btn_nextStage"]
           }}<svg
             width="24"

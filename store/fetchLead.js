@@ -1,11 +1,15 @@
 export const actions = {
   async postLead({}, payload) {
-    const res = await this.$axios.$post(`/leads/create`, payload.data, {
-      headers: {
-        Language: payload.currentLang,
-      },
-    });
-    return res;
+    try {
+      const res = await this.$axios.$post(`/leads/create`, payload.data, {
+        headers: {
+          Language: payload.currentLang,
+        },
+      });
+      return res;
+    } catch (e) {
+      return e.response;
+    }
   },
   async editLead({}, payload) {
     const res = await this.$axios.$put(

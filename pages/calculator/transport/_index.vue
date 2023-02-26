@@ -222,7 +222,7 @@ export default {
       const newUserFullName = this.ruleForm.first_name.split(" ");
       this.$refs[ruleForm].validate(async (valid) => {
         if (valid) {
-          if (this.ruleForm.first_name.includes(" ")) {
+          if (this.ruleForm.first_name.includes(" ") && process.browser) {
             const step = JSON.parse(localStorage.getItem("app_create"));
             this.ruleForm = {
               ...this.ruleForm,

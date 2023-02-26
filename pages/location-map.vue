@@ -362,7 +362,7 @@
 
       <TitleSmall title="Map" />
 
-      <div class="location-map-maps-grid" v-if="!skeletonMap">
+      <div class="location-map-maps-grid">
         <div class="location-map-card">
           <el-skeleton-item
             v-if="skeleton_from"
@@ -706,9 +706,11 @@ export default {
   },
   async mounted() {
     this.__GET_CITIES();
-    this.currentCities = await JSON.parse(
-      localStorage.getItem("cities_from_map")
-    );
+    if (process.browser) {
+      this.currentCities = await JSON.parse(
+        localStorage.getItem("cities_from_map")
+      );
+    }
     this.__GET_REVIEWS();
     this.__GET_CURRENT_CITY_TO();
     this.__GET_CURRENT_CITY_FROM();
@@ -770,7 +772,7 @@ export default {
         data: this.ruleForm,
       });
       this.$nuxt.$loading.finish();
-      if (this.leadCread.uuid) {
+      if (this.leadCread.uuid && process.browser) {
         localStorage.setItem("editData", JSON.stringify(this.ruleForm));
         this.$router.push(`/calculator/choice-tarif/${this.leadCread.uuid}`);
       }

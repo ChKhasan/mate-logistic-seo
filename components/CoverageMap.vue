@@ -13,6 +13,7 @@
         :text="$store.state.translations['main.coverage_map_text']"
       />
       <div class="coverage-map-grid">
+        <client-only>
         <div
           class="coverage-map-img"
           data-aos="zoom-in"
@@ -1527,6 +1528,8 @@
             {{ $store.state.translations["main.coverageMap_form_text"] }}
           </p>
         </div>
+</client-only>
+
       </div>
 
       <div class="mate-news">
@@ -1692,7 +1695,9 @@ export default {
       return `svg-map__location svg-map__location--heat${index % 4}`;
     },
     sendCities() {
-      localStorage.setItem("cities_from_map", JSON.stringify(this.dataForm));
+      if(process.browser) {
+        localStorage.setItem("cities_from_map", JSON.stringify(this.dataForm));
+      }
       this.$router.push("/location-map");
     },
   },
