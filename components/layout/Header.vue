@@ -515,6 +515,7 @@ export default {
       });
     },
     scrollElement(id) {
+      console.log(id);
       if (this.$route.path == "/" && process.client) {
         const element = document.getElementById(id);
         element.scrollIntoView();
