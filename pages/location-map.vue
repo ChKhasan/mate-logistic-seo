@@ -359,9 +359,7 @@
           </div>
         </div>
       </div>
-
       <TitleSmall title="Map" />
-
       <div class="location-map-maps-grid">
         <div class="location-map-card">
           <el-skeleton-item
@@ -429,16 +427,7 @@
             ></div>
           </div>
         </div>
-        <!-- <LocationMapCard
-          :currentCitiesData="currentCitiesData.from"
-          :skeleton="skeleton_from"
-          spaceType="A"
-        />
-        <LocationMapCard
-          :currentCitiesData="currentCitiesData.to"
-          :skeleton="skeleton_to"
-          spaceType="B"
-        /> -->
+      
       </div>
       <div class="service-from-cards">
         <ServiceApplicationCard
