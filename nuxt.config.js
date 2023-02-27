@@ -34,11 +34,29 @@ export default {
   },
   googleFonts: {
     useStylesheet: false,
-    preload: true
+    preload: true,
   },
   components: true,
 
-  buildModules: [],
+  buildModules: [
+    [
+      "@nuxtjs/google-fonts",
+      {
+        families: {
+          Mulish: {
+            wght: [400, 500, 600, 700],
+          },
+        },
+        subsets: ["latin"],
+        display: "swap",
+        prefetch: false,
+        preconnect: false,
+        preload: false,
+        download: true,
+        base64: false,
+      },
+    ],
+  ],
 
   modules: [
     "bootstrap-vue/nuxt",
