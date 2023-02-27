@@ -231,7 +231,7 @@ export default {
   components: {
     Header,
     Footer,
-  },
+},
 };
 </script>
 <style lang="scss">

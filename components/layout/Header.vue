@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="header" ref="navScroll">
+
     <div class="header-top">
       <div class="container_xl header-top-grid">
         <div class="d-flex align-items-center header-text-animate">
@@ -404,6 +405,7 @@ export default {
       drawerShow: false,
       deadline2: moment().add(1, "h").format(fmt),
       discountTimer: 60,
+      loader: true,
       ruleForm: {
         nbm: "",
       },
@@ -468,15 +470,13 @@ export default {
     },
 
     async __GET_TRANSLATIONS(command) {
-      this.$nextTick(() => {
-        this.$nuxt.$loading.start();
-      });
+      this.loader = true;
       const translations = await this.$store.dispatch(
         "fetchTranslations/getTranslations",
         command
       );
       await this.$store.commit("getTranslations", translations);
-      await this.$nuxt.$loading.finish();
+      this.loader = false;
     },
     async __GET_STATIC_INFORMATIONS() {
       const info = await this.$store.dispatch(
@@ -529,7 +529,9 @@ export default {
 
   mounted() {
     this.__GET_STATIC_INFORMATIONS();
-    this.__GET_TRANSLATIONS();
+    if (process.client) {
+      this.__GET_TRANSLATIONS();
+    }
     var header = this.$refs.navScroll;
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -623,4 +625,5 @@ export default {
 .el-drawer__wrapper {
   z-index: 2009 !important;
 }
+
 </style>
