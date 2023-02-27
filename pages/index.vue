@@ -43,6 +43,7 @@ export default {
       return this.$i18n.locale;
     },
   },
+  scrollToTop: true,
   mounted() {
     this.__GET_SERVICES();
     this.__GET_STATES();
@@ -50,6 +51,9 @@ export default {
     setTimeout(() => {
       this.scrollElement();
     }, 0);
+    if (process.client) {
+    window.scrollTo(0, 0)
+  }
   },
   beforeMount() {},
   methods: {

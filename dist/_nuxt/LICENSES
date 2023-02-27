@@ -1,29 +1,3 @@
-/*!
- * Vue.js v1.0.28
- * (c) 2016 Evan You
- * Released under the MIT License.
- */
-
-/*!
- * Vue.js v2.7.14
- * (c) 2014-2022 Evan You
- * Released under the MIT License.
- */
-
-/*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-/*!
- * vuex v3.6.2
- * (c) 2021 Evan You
- * @license MIT
- */
-
-
 /*
 object-assign
 (c) Sindre Sorhus
@@ -35,16 +9,6 @@ object-assign
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
 */
-
-/*!
- * Autolinker.js
- * 1.8.3
- *
- * Copyright(c) 2018 Gregory Jacobs <greg@greg-jacobs.com>
- * MIT License
- *
- * https://github.com/gregjacobs/Autolinker.js
- */
 
 /*!
  * vue-client-only v0.0.0-semantic-release
@@ -74,12 +38,6 @@ object-assign
   * https://github.com/linusborg/portal-vue
   * 
  */
-
-/*! Hammer.JS - v2.0.7 - 2016-04-22
- * http://hammerjs.github.io/
- *
- * Copyright (c) 2016 Jorik Tangelder;
- * Licensed under the MIT license */
 
 /**
  * @license
@@ -133,3 +91,23 @@ object-assign
 //! moment.js
 
 //! moment.js locale configuration
+
+
+/*!
+ * Vue.js v2.7.14
+ * (c) 2014-2022 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */

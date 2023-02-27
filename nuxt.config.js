@@ -1,6 +1,4 @@
-
 export default {
-
   loading: "~/components/loading.vue",
   head: {
     title: "Mate Logistics",
@@ -20,7 +18,7 @@ export default {
   script: ["//code.jivosite.com/widget/dFa3MqED0a"],
 
   css: ["~/assets/sass/app.scss", "aos/dist/aos.css"],
-  ssr: true,
+  // ssr: true,
   plugins: [
     { src: "~plugins/antd-ui.js", ssr: false },
     { src: "~plugins/element-ui.js", ssr: false },
@@ -93,6 +91,9 @@ export default {
         },
       },
     },
+  },
+  loading: {
+    color: "#008AFF",
   },
   build: {
     babel: {

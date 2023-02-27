@@ -393,6 +393,7 @@ import moment from "moment";
 import ModalSubmitApp from "../modals/modalSubmitApp.vue";
 const fmt = "YYYY-MM-DD HH:mm:ss";
 export default {
+  scrollToTop: true,
   props: {
     drawerOpen: {
       type: Function,
