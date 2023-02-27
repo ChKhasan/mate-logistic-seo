@@ -33,7 +33,8 @@ export default {
     background: "white",
   },
   googleFonts: {
-    useStylesheet: false
+    useStylesheet: false,
+    preload: true
   },
   components: true,
 
