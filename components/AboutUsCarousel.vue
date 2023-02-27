@@ -1,11 +1,10 @@
 <template lang="html">
   <div>
-    <client-only>
     <div
       class="flex items-center justify-center blog position-relative about-us-carousel"
     >
-      <div class="swiper mySwiper-steps">
-        <div class="swiper-wrapper">
+      <div class="swiper mySwiper-steps ">
+        <div class="swiper-wrapper flex-column">
           <div class="swiper-slide">
             <AboutUsSteps :img="1" />
           </div>
@@ -21,13 +20,14 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
+
     </div>
     <div
       class="flex items-center justify-center blog position-relative about-us-carousel-mobile"
     >
       <div class="absolute_banner"></div>
       <div class="swiper mySwiper-steps-mobile">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper flex-column">
           <div class="swiper-slide">
             <AboutUsSteps :img="1" />
           </div>
@@ -47,7 +47,7 @@
         <a class="contact-btn" :href="`tel:${$store.state.staticInfo.nbm}`">
           {{ $store.state.translations[`main.howWeWork_call`] }}
         </a>
-        <div class="form-btn" >
+        <div class="form-btn">
           {{ $store.state.translations["main.form_btn_nextStage"]
           }}<svg
             width="24"
@@ -68,8 +68,6 @@
         </div>
       </div>
     </div>
-    </client-only>
-    
   </div>
 </template>
 <script>
@@ -82,38 +80,40 @@ import PartnersCard from "./cards/PartnersCard.vue";
 export default {
   props: ["reviews"],
   mounted() {
-    const swiper = new Swiper(".mySwiper-steps", {
-      slidesPerView: 1,
-      direction: "vertical",
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      navigation: {
-        nextEl:
-          ".swiper-slide .about-us-grid .about-us-info .banner-form-btn .form-btn ",
-        prevEl: ".swiper-slide .swiper-button-prev",
-      },
+    if (process.browser) {
+      const swiper = new Swiper(".mySwiper-steps", {
+        slidesPerView: 1,
+        direction: "vertical",
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        navigation: {
+          nextEl:
+            ".swiper-slide .about-us-grid .about-us-info .banner-form-btn .form-btn ",
+          prevEl: ".swiper-slide .swiper-button-prev",
+        },
 
-      speed: 1000,
-    });
-    const swiper2 = new Swiper(".mySwiper-steps-mobile", {
-      slidesPerView: 1,
-      direction: "vertical",
+        speed: 1000,
+      });
+      const swiper2 = new Swiper(".mySwiper-steps-mobile", {
+        slidesPerView: 1,
+        direction: "vertical",
 
-      pagination: {
-        el: ".swiper-pagination-mobile",
-        type: "bullets",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".banner-form-btn .form-btn ",
-        prevEl: ".swiper-slide .swiper-button-prev",
-      },
+        pagination: {
+          el: ".swiper-pagination-mobile",
+          type: "bullets",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".banner-form-btn .form-btn ",
+          prevEl: ".swiper-slide .swiper-button-prev",
+        },
 
-      speed: 1000,
-    });
+        speed: 1000,
+      });
+    }
   },
   components: { PartnersCard, AboutUsSteps },
 };

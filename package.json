@@ -13,6 +13,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.3.1",
     "@nuxtjs/proxy": "^2.1.0",
+    "@nuxtjs/vercel-builder": "^0.24.0",
     "@svg-maps/usa": "^1.1.1",
     "ant-design-vue": "^1.7.8",
     "aos": "^2.3.4",

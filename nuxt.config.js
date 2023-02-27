@@ -17,7 +17,11 @@ export default {
 
   script: ["//code.jivosite.com/widget/dFa3MqED0a"],
 
-  css: ["~/assets/sass/app.scss", "aos/dist/aos.css"],
+  css: [
+    "~/assets/sass/app.scss",
+    "aos/dist/aos.css",
+    "~/assets/fonts/fonts.css",
+  ],
   // ssr: true,
   plugins: [
     { src: "~plugins/antd-ui.js", ssr: false },
@@ -38,26 +42,13 @@ export default {
   },
   components: true,
 
-  buildModules: [
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          Mulish: {
-            wght: [400, 500, 600, 700],
-          },
-        },
-        subsets: ["latin"],
-        display: "swap",
-        prefetch: false,
-        preconnect: false,
-        preload: false,
-        download: true,
-        base64: false,
-      },
-    ],
-  ],
-
+  buildModules: ["@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      Mulish: [400, 700],
+      display: "swap",
+    },
+  },
   modules: [
     "bootstrap-vue/nuxt",
     "@nuxtjs/i18n",
