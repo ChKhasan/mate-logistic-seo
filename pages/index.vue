@@ -14,7 +14,6 @@
     <LogisticCompany />
     <LogisticsServices :services="services" />
     <CoverageMap :states="states" />
-      <h1>asdasd</h1>
     <AboutLogisticComp />
   </div>
 </template>
