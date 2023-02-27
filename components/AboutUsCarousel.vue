@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+    <client-only>
     <div
       class="flex items-center justify-center blog position-relative about-us-carousel"
     >
@@ -67,6 +68,8 @@
         </div>
       </div>
     </div>
+    </client-only>
+    
   </div>
 </template>
 <script>
