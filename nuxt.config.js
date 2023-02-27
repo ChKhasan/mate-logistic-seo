@@ -32,6 +32,9 @@ export default {
     color: "#008AFF",
     background: "white",
   },
+  googleFonts: {
+    useStylesheet: false
+  },
   components: true,
 
   buildModules: [],
